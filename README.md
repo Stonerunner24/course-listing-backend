@@ -1,16 +1,12 @@
-# Tutorial Backend with Node
+# Courses Backend with Node
 
-This application allows users to create and maintain a list of tutorials that can have multiple lessons within. Please visit https://github.com/OC-ComputerScience/tutorial-frontend-vue2 for the Vue 2 frontend repository or https://github.com/OC-ComputerScience/tutorial-frontend-vue3 for the Vue 3 frontend repository.
- 
-#### Please note:
-- You will need to create a database and be able to run it locally.
-- This project utilizes **Google Authentication** to allow users to log in.
-- You will need to provide a **Client ID from Google** for this project to run locally.
+This application allows users to create and maintain a list of courses that can be assigned to different departments, and given a
+specific number of hours.
 
 ## Project Setup
 1. Clone the project into your **XAMPP/xamppfiles/htdocs** directory.
 ```
-git clone https://github.com/OC-ComputerScience/tutorial-backend.git
+git clone https://github.com/Stonerunner24/course-listing-backend.git
 ```
 
 2. Install the project.
