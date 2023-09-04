@@ -30,7 +30,7 @@ app.get("/", (req, res) => {
 // Must have all routes here
 require("./app/routes/auth.routes.js")(app);
 require("./app/routes/user.routes")(app);
-require("./app/routes/tutorial.routes")(app);
+require("./app/routes/courses.routes")(app);
 require("./app/routes/lesson.routes")(app);
 
 // set port, listen for requests
