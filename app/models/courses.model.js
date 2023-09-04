@@ -5,12 +5,14 @@ module.exports = (sequelize, Sequelize) => {
     },
     course_number: {
       type: Sequelize.STRING,
+      primaryKey: true,
+      alowNull: false,
     },
     course_level: {
-      type: Sequelize.INT,
+      type: Sequelize.INTEGER,
     },
     credit_hours: {
-      type: Sequelize.INT,
+      type: Sequelize.INTEGER,
     },
     course_name: {
       type: Sequelize.STRING,
