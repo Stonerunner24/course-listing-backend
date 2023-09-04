@@ -22,11 +22,12 @@ app.use(express.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
 
-// simple route
+// simple route <-- get rid of this
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to bezkoder application." });
 });
 
+// Must have all routes here
 require("./app/routes/auth.routes.js")(app);
 require("./app/routes/user.routes")(app);
 require("./app/routes/tutorial.routes")(app);
