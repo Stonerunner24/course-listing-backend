@@ -3,7 +3,7 @@ const Courses = db.courses;
 const Op = db.Sequelize.Op;
 // Create and Save a new Course
 exports.create = (req, res) => {
-  // Validate request
+  // Valcourse_numberate request
   if (!req.body.title) {
     res.status(400).send({
       message: "Content can not be empty!",
@@ -47,30 +47,30 @@ exports.findAll = (req, res) => {
     });
 };
 
-// Find a single Course with an id
+// Find a single Course with an course_number
 exports.findOne = (req, res) => {
-  const id = req.params.id;
-   Courses.findByPk(id)
+  const course_number = req.params.course_number;
+   Courses.findByPk(course_number)
     .then((data) => {
       if (data) {
         res.send(data);
       } else {
         res.status(404).send({
-          message: `Cannot find  Course with id=${id}.`,
+          message: `Cannot find  Course with course_number=${course_number}.`,
         });
       }
     })
     .catch((err) => {
       res.status(500).send({
-        message: err.message || "Error retrieving  Courses with id=" + id,
+        message: err.message || "Error retrieving  Courses with course_number=" + course_number,
       });
     });
 };
-// Update a Course by the id in the request
+// Update a Course by the course_number in the request
 exports.update = (req, res) => {
-  const id = req.params.id;
+  const course_number = req.params.course_number;
    Courses.update(req.body, {
-    where: { id: id },
+    where: { course_number: course_number },
   })
     .then((num) => {
       if (num == 1) {
@@ -79,21 +79,21 @@ exports.update = (req, res) => {
         });
       } else {
         res.send({
-          message: `Cannot update  Course with id=${id}. Maybe  Course was not found or req.body is empty!`,
+          message: `Cannot update  Course with course_number=${course_number}. Maybe  Course was not found or req.body is empty!`,
         });
       }
     })
     .catch((err) => {
       res.status(500).send({
-        message: err.message || "Error updating  Course with id=" + id,
+        message: err.message || "Error updating  Course with course_number=" + course_number,
       });
     });
 };
-// Delete a Course with the specified id in the request
+// Delete a Course with the specified course_number in the request
 exports.delete = (req, res) => {
-  const id = req.params.id;
+  const course_number = req.params.course_number;
    Courses.destroy({
-    where: { id: id },
+    where: { course_number: course_number },
   })
     .then((num) => {
       if (num == 1) {
@@ -102,13 +102,13 @@ exports.delete = (req, res) => {
         });
       } else {
         res.send({
-          message: `Cannot delete  Course with id=${id}. Maybe  Course was not found!`,
+          message: `Cannot delete  Course with course_number=${course_number}. Maybe  Course was not found!`,
         });
       }
     })
     .catch((err) => {
       res.status(500).send({
-        message: err.message || "Could not delete  Course with id=" + id,
+        message: err.message || "Could not delete  Course with course_number=" + course_number,
       });
     });
 };
