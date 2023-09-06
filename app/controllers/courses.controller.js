@@ -4,7 +4,7 @@ const Op = db.Sequelize.Op;
 // Create and Save a new Course
 exports.create = (req, res) => {
   // Valcourse_numberate request
-  if (!req.body.title) {
+  if (!req.body.course_number) {
     res.status(400).send({
       message: "Content can not be empty!",
     });
@@ -33,9 +33,8 @@ exports.create = (req, res) => {
 };
 // Retrieve all Courses from the database.
 exports.findAll = (req, res) => {
-  const title = req.query.title;
-  var condition = title ? { title: { [Op.like]: `%${title}%` } } : null;
-   Courses.findAll({ where: condition })
+
+   Courses.findAll()
     .then((data) => {
       res.send(data);
     })
