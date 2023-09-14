@@ -22,15 +22,13 @@ app.use(express.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
 
-// simple route
+// simple route <-- get rid of this
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to bezkoder application." });
 });
 
-require("./app/routes/auth.routes.js")(app);
-require("./app/routes/user.routes")(app);
-require("./app/routes/tutorial.routes")(app);
-require("./app/routes/lesson.routes")(app);
+// Must have all routes here
+require("./app/routes/courses.routes")(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 3014;
